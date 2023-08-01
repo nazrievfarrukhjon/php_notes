@@ -1,4 +1,5 @@
-#   1 Архитектура
+#   1 Model ( Представление в MVC ) 
+# Архитектура
 - это
    - кмпоненты кода (на какие части разбиты),
    - струатура этих компонетов (что где находится)
@@ -42,7 +43,7 @@
 
 
 #   2 Interfaces (договоренность)
- * мнодественного наследования нет
+ * множественного наследования нет
  * Type hinting 
  * In PHP, type hinting (or type casting)
  * singleton
@@ -57,6 +58,35 @@
 # Актив рекорд??? data mapper ? 
 
 
-#   3  
+#   3 VIEW ( Представление в MVC )
+ - задача view - сформировать ответь на запрос 
+ - view (представление) использует html, css js
+ - view может сожержать логику (на пчп)
+
+ ** правильное разделение view и бизнес логики
+ * шаблонизаторы ?
+
+# !!!
+ - задача програмиста ставит себе как можно больше ограничений - constraints
+ - Прочесть и понять задачу 
+ - Уточнить задачу
+ - Запланировать
+
+#  Магией (magic functions)
+- в пчп называют методы которые автоматически вызываются в определенных ситуациях
+- __set() - перехватчик
+- In PHP, __set() is a magic method that is automatically fired when an attempt is made to assign a value to an inaccessible or undefined property within an object. This magic method allows you to control the behavior when setting the value of properties that are not directly accessible within the class.
+- The __set() magic method is defined within a class and takes two parameters: $name (the name of the property being set) and $value (the value being assigned to the property).
+- __set() {}
+- __get() {}
+- __isset() {} when an attempt is made to check the existence of an inaccessible or undefined property using the isset() function or the empty() function.
+
+* Пример
+* Если например у наст есть класс View и у него нет поля products то при присвоении данных
+* в это поле вызывается магический метод __set() 
+* $view = new View();
+* $view->products = Product::findAll();
+* при этом первым параметром передается имя поля вторым данные которые должны быть присвоены этому поле
+* public function __set(string $products, Products:all()): void
 
 #   4  
