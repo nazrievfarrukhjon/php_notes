@@ -4,7 +4,7 @@ namespace App;
 
 class Db
 {
-    public static Dn|null $instance = null;
+    public static Db|null $instance = null;
     protected \PDO $dbh;
 
     protected function __construct()
@@ -16,7 +16,7 @@ class Db
         );
     }
 
-    public static function instance(): \PDO|Db|null
+    public static function instance(): Db|null
     {
         if (self::$instance === null) {
             self::$instance = new self();
