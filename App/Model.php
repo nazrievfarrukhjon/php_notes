@@ -18,6 +18,17 @@ abstract class Model
         );
     }
 
+    public static function findById(int $id)
+    {
+        $db = Db::instance();
+        $sql = 'SELECT * FROM ' . static::TABLE . ' where id =' . $id;
+
+        return $db->query(
+            $sql,
+            static::class
+        );
+    }
+
     public function insert(): void
     {
         $props = get_object_vars($this);

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Db;
 use App\Model;
 
 class Product extends Model implements HasPrice, HasTitle

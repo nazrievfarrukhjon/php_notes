@@ -2,7 +2,7 @@
 
 namespace View;
 
-class View {
+class View implements  \Countable {
     public array $data;
 
     public function __set(string $name, $value): void
@@ -33,6 +33,21 @@ class View {
 //        }
 
         include $template;
+    }
+
+    public function render(string $template)
+    {
+        ob_start();
+        include $template;
+        $contents = ob_get_contents();
+        ob_end_clean();
+
+        return $contents;
+    }
+
+    public function count(): int
+    {
+        return count($this->data);
     }
 }
 

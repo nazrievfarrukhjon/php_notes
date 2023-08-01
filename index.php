@@ -1,15 +1,22 @@
 <?php
 
 use App\Models\Product;
-use App\Models\Service;
 use View\View;
 
 require __DIR__ . '/autoload.php';
 
-$view = new View();
+$ctrl = $_GET['ctrl'] ?? 'Index';
 
-$view->products = Product::findAll();
-$view->services = Service::findAll();
+$class = '\\Controllers\\' . $ctrl;
+if (class_exists($class)) {
+    $ctrl = new $class;
+    $ctrl();
+} else {
+    die('nooooo!');
+}
 
-$view->display(__DIR__ . '/Templates/index.php');
-
+//$view = new View();
+//$view->products = Product ::findAll();
+//$view->services = Product::findAll();
+//echo count($view); die;
+//$view->display(__DIR__ . '/Templates/index.php');

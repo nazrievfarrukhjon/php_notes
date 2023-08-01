@@ -19,28 +19,28 @@
     <?php foreach ($this->products as $product) : ?>
     <tr>
         <td><?php echo $product->id; ?></td>
-        <td><?php echo $product->title; ?></td>
+        <td><a href="/index.php?ctrl=Product&id=<?php echo $product->id; ?>"><?php echo $product->title; ?></a></td>
         <td><?php echo sprintf('%0.2f', $product->price); ?></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
 
-<h1>Услуги</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>name</th>
-        <th>price</th>
-    </tr>
-    <?php foreach ($this->services as $service) { ?>
-        <tr>
-            <td><?php echo $service->id; ?></td>
-            <td><?php echo $service->title; ?></td>
-            <td><?php echo $service->price; ?></td>
-        </tr>
-    <?php } ?>
-</table>
+<!--<h1>Услуги</h1>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>name</th>-->
+<!--        <th>price</th>-->
+<!--    </tr>-->
+<!--    --><?php //foreach ($this->services as $service) { ?>
+<!--        <tr>-->
+<!--            <td>--><?php //echo $service->id; ?><!--</td>-->
+<!--            <td>--><?php //echo $service->title; ?><!--</td>-->
+<!--            <td>--><?php //echo $service->price; ?><!--</td>-->
+<!--        </tr>-->
+<!--    --><?php //} ?>
+<!--</table>-->
 
 </body>
 </html>
