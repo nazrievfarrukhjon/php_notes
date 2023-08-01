@@ -19,21 +19,22 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($data);
-        $data = $sth->fetchAll();
 
-        $res = [];
+        return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
 
-        foreach ($data as $row) {
-            $item =  new $class;
-            foreach ($row as $key => $value) {
-                if (is_numeric($key)) {
-                    continue;
-                }
-                $item->$key = $value;
-            }
-            $res[] = $item;
-        }
-
-        return $res;
+//        $res = [];
+//
+//        foreach ($data as $row) {
+//            $item =  new $class;
+//            foreach ($row as $key => $value) {
+//                if (is_numeric($key)) {
+//                    continue;
+//                }
+//                $item->$key = $value;
+//            }
+//            $res[] = $item;
+//        }
+//
+//        return $res;
     }
 }
