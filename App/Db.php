@@ -4,15 +4,25 @@ namespace App;
 
 class Db
 {
-    private $dbh;
+    public static Dn|null $instance = null;
+    protected \PDO $dbh;
 
-    public function __construct()
+    protected function __construct()
     {
         $config = (include __DIR__ . '/../config.php')['db'];
         $this->dbh = new \PDO('mysql:dbname=' . $config['dbname'] . ';host=' . $config['host'],
             $config['user'],
             $config['password']
         );
+    }
+
+    public static function instance(): \PDO|Db|null
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
 
     public function query($sql, $class, $data = [])
@@ -36,5 +46,17 @@ class Db
 //        }
 //
 //        return $res;
+    }
+
+    public function execute($sql, $data): bool
+    {
+        $sth = $this->dbh->prepare($sql);
+
+        return $sth->execute($data);
+    }
+
+    public function lastId()
+    {
+        return $this->dbh->lastInsertId();
     }
 }

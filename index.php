@@ -2,5 +2,8 @@
 
 require __DIR__ . '/autoload.php';
 
-$data = \App\Models\User::findAll();
-var_dump($data);
+$product = new \App\Models\Product();
+$product->title = 'test';
+$product->price = 42000;
+$product->insert();
+var_dump($product);
