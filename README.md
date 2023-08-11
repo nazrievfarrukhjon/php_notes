@@ -376,3 +376,34 @@ echo "$a is greater than $b.";
 - Container Паттер - это объект который готовит для нас други обекты по определенным рецептам чтобы мы их использовали
 - (auto wiring - автовайринг, container, dependency injection)
 
+* > PHP 1 ВВедение в профессию
+- В пчп все является выражением 
+- присваивание это тоже выражение
+- Выражение это то что имеет значение и может быть присвоенно в переменную
+- An expression in PHP is a combination of operators, variables, and values that can be ~~evaluated to produce a resulting value~~.
+- PHP expressions, like expressions in other programming languages, represent computations or operations that can yield a specific outcome. 
+- - The result of an expression can be used in various ways, such as being assigned to a variable, used in conditional statements, or passed as an argument to a function.
+- Однако есть и некоторые инструкции (statements) в PHP, которые не являются выражениями, так как они не возвращают какого-либо значения.
+- В PHP результатом операции присваивания является значение, которое было присвоено переменной. 
+- Оператор приведение типа (кастовать накалдовать)
+- `or, and, xor, nor` приоритет этих оперторов ниже присваивания
+- в отличие от "С" в пчп все что не ноль это истина  А в С ноль это тру
+- пустая строка это лож
+- Все это лож при кастовании на (bool)'', (bool)'0', (bool)0, bool(null) 
+- (string)false == '', (string)true == '1'
+- явное не явное рпиведение типов
+- Операторы ветвлений if
+- При сравнении всегда писать переменную справа
+- контекст в пчп замкнутые
+
+* > файлы на сервере
+- Функции
+- type resource - Все во что можно писать или читать от туда файл, соединение с БД сетевое соединение
+- fopen(), fgets(), fread(), fclose(), feof()
+- `__DIR__` это константа вернет путь к директории где была вызвана эта константа
+- file() - возврашает массивб каждая строка это элеменет массива
+- file_get_contents() - вес файл берет в памят в строку
+- file_exists()
+- is_readable()
+- readfile()
+
