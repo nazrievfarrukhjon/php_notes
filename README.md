@@ -429,3 +429,33 @@ a - append - запис в конце, pointer to the end)
 - move_uploaded_file(from, to) vs copy 
 - this one is secure 
 
+* > string
+  In PHP, there's a distinction between single-quoted and double-quoted strings:
+
+  Single-Quoted Strings (')
+  Variables are not parsed within single-quoted strings. For example, '$variable' will be treated as a literal string, not the value of the variable.
+  Escape sequences (\n, \t, \\, \', etc.) are not interpreted within single-quoted strings except for \\ and \'.
+
+  Double-Quoted Strings (")
+  Variables inside double-quoted strings are parsed and replaced with their values. For example, "$variable" will be replaced with the value of the variable.
+  Escape sequences are interpreted within double-quoted strings. For example, "\n" will be interpreted as a newline character.
+
+* > Массивы
+-  foreach(){}
+- index 
+- functions for arrays 
+- implode() explode() in_array() array_merge()
+
+* > super global array $_GET
+- $_POST
+- http protocol methods get and post
+
+* > переменные
+- в пчп переменное - это значение которое имеет свое собственное имя
+- Это выражение (значение) сохраненное под понятным для нас значением
+- В пчп В памяти хранится значение и ему можно дать  имя
+- это и есть отличие определение переменной в пчп от других
+- Например можно написать так `<?php 43; ?>`   это значение но у него нет имени
+- $q = 43; Это уже значение у которого есть имя
+- In PHP, a variable is a named container used to store data values.
+
