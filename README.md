@@ -397,7 +397,8 @@ echo "$a is greater than $b.";
 - контекст в пчп замкнутые
 
 * > файлы на сервере
-- Функции
+- 
+- Функции чтения
 - type resource - Все во что можно писать или читать от туда файл, соединение с БД сетевое соединение
 - fopen(), fgets(), fread(), fclose(), feof()
 - `__DIR__` это константа вернет путь к директории где была вызвана эта константа
@@ -406,4 +407,25 @@ echo "$a is greater than $b.";
 - file_exists()
 - is_readable()
 - readfile()
+- Запись
+- fopen(path, 'w'), fwrite() fclose() 
+- режимы открытия файла (r - чтение, r+ - чтение и запись. w -запись,
+w+ запис и чтение. файл будет создан если не существует или обнулен(пустым станет файл), 
+a - append - запис в конце, pointer to the end)
+- file_put_coontents()
+- include - возврашает то что возврашает файл
+- например
+- file.php который имее <?php return 2+2; include возврашает 4
+
+* > функции работы с файлами
+- `scandir(__DIR__)`
+- path_info()
+- dirname()
+- filesize(), realpath()
+- Канонический путь (или абсолютный путь)
+* > Загрузка файлов
+- пост метод реквест формой enctype="multipart/form-data"
+- $FILES is a superglobal array
+- move_uploaded_file(from, to) vs copy 
+- this one is secure 
 

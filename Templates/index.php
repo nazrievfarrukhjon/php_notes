@@ -26,6 +26,12 @@
 </table>
 
 
+
+<form action="/upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="my_pic">
+    <button type="submit"> upload </button>
+</form>
+
 <!--<h1>Услуги</h1>-->
 <!--<table>-->
 <!--    <tr>-->
