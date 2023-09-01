@@ -10,7 +10,7 @@ class Db
     protected function __construct()
     {
         $config = (include __DIR__ . '/../config.php')['db'];
-        $this->dbh = new \PDO('mysql:dbname=' . $config['dbname'] . ';host=' . $config['host'],
+        $this->dbh = new \PDO('pgsql:dbname=' . $config['dbname'] . ';host=' . $config['host'],
             $config['user'],
             $config['password']
         );

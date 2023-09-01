@@ -1,9 +1,10 @@
 <?php
 return [
     'db' => [
-        'host' => '127.0.0.1',
-        'dbname' => 'php2',
-        'user' => 'root',
-        'password' => ''
+        'host' => 'pgsql_test',
+        'port' => 5432,
+        'dbname' => 'test_db',
+        'user' => 'postgres',
+        'password' => 'postgres'
     ],
 ];
