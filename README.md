@@ -170,3 +170,7 @@ echo "$a is greater than $b.";
 * object
 * 
 * > Anonymous classes
+* 
+* > foreign function include - FFI
+
+* > Frameworks

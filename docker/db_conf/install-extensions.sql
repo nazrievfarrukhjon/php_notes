@@ -1,0 +1,12 @@
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+CREATE EXTENSION fuzzystrmatch;
+create extension btree_gin;
+create index tic_con_names_pg on terrorists_initials_combinations using gin (initial_combination gin_trgm_ops);
+create index crm_org_cl_con_names_pg on crm_org_clients using gin (concatenated_name gin_trgm_ops);
+create index con_names_pg on terrorists using gin (concatenated_names gin_trgm_ops);
+create index con_org_names_pg on terrorist_organizations using gin (concatenated_name gin_trgm_ops);
+create index crm_client_pg on crm_clients using gin (concatenated_names gin_trgm_ops);
+create index rel_con_names_pg on relatives using gin (concatenated_names gin_trgm_ops);
+create unique index tin_idx on tax_organizations (tin);
+create unique index relative_tin_indx on relative_organizations (tin);
+create unique index alif_tin_indx on alif_organizations (tin);
